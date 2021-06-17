@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Clique da Sorte: Gerador de dezenas, Sorteio de dezenas, Papite MegaSena, Gerador de números, Sorteio da MegaSena, Dezena da sorte, Mega-sena</title>
+  <!--Meta Tag-->
+  <meta name="author" content="Allan Ferreira Botomé">
+  <meta name="copyright" content="© 2021 Allan F. Botomé" />
+  <meta name="description" content="Um gerador de dezenas aleatórias para jogar na MegaSena"/>
+  <meta name="keywords" content="MegaSena, Mega-Sena, sorteio de dezenas, sorteio megasena, gerador de dezenas, dezenas da sorte, dezenas aleatórias, clique da sorte, megasena resultado, palpite megasena , aposta, loteria"/>
+  <meta name="robots" content="index,follow">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!--Google fonts-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <!-- FAVICON -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+</head>
+<body>
+  <nav class="navbar green" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#megasena">Sobre a Mega-Sena</a></li>
+        <li><a href="#probabilidades">Probabilidades</a></li>
+        <li><a href="#footer">Apoie</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#megasena">Sobre a Mega-Sena</a></li>
+        <li><a href="#probabilidades">Probabilidades</a></li>
+        <li><a href="#footer">Apoie</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div class="container" id="geradordiv">
+    <div class="section" id="gerador">
+      <div class="row">
+
+      <div class="input-field col s12">
+        <select id="option">
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+        </select>
+        <label>Escolha a quantidade de dezenas que deseja sortear</label>
+      </div>
+
+      <div class="col s12 m6">
+        <a class="waves-effect waves-light btn-small orange" onclick="gerarDezenas();"><i class="material-icons left">attach_money</i>Sortear dezenas</a>
+
+        <br><br>
+      </div>
+
+      <div class="col s12 m6">
+        <h5 id="num"></h5>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center orange-text"><i class="material-icons">near_me</i></h2>
+            <h5 class="center">Sorteie</h5>
+            <p class="center light">Você pode sortear as dezenas selecionando a quantidade que deseja, e após clicando no botão "Sortear dezenas"</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center orange-text"><i class="material-icons">mode_edit</i></h2>
+            <h5 class="center">Aposte</h5>
+            <p class="center light">Grave os números gerados pelo nosso sistema e faça sua aposta online ou em uma lotérica de sua preferência</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center orange-text"><i class="material-icons">watch_later</i></h2>
+            <h5 class="center">Aguarde</h5>
+            <p class="center light">Agora só aguardar o resultado da sua aposta, e se gostou do nosso palpite <a href="#footer">apoie</a> mais projetos como este</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+  </div>
+
+
+  <div class="container">
+    <div class="section" id="megasena">
+      <img class="responsive-img" id="logomega" src="images/logo-megasena.png">
+      <div>
+        <h7 class="center-align">
+          A Mega-Sena é a maior modalidade lotérica do Brasil,
+          sendo uma entre as dez modalidades atuais das loterias da Caixa (Caixa Econômica Federal),
+          conta com sorteios duas vezes por semana, além da Mega-Sena da Virada e outras modalidades de prêmios.
+          Para ganhar o prêmio máximo da Mega-Sena, denominado sena, é necessário obter coincidência entre seis dos números apostados e os seis números sorteados,
+          de um total de seis dezenas (de 1 a 60), independentemente da ordem da aposta ou da ordem do sorteio.
+          O concurso prevê também a chance de se ganhar parte do prêmio máximo,
+          pelo acerto da quina (apenas cinco dos números sorteados), ou da quadra (apenas quatro dos números sorteados),
+          com prêmios menores que aquele que é pago no acerto da sena, sendo o da quina maior que o da quadra.
+          <br><br>
+          Os prêmios correspondem a 32,2% da renda das apostas (Prêmio Bruto de 46,0% — 13,8% de imposto de renda), sendo:
+          35% para quem marcou 6 pontos (sena).
+          19% para quem marcou 5 pontos (quina).
+          19% para quem marcou 4 pontos (quadra).
+          22% acumulado para o próximo sorteio de final 0 ou 5.
+          5% acumulado para o sorteio especial de final de ano.
+          Ao imposto de renda correspondem 13,8% de todas as apostas.
+          Os vencedores têm 90 dias para retirar seus prêmios,
+          apresentando o bilhete correspondente em casas lotéricas (se o prêmio for de até 1 787,77 reais)
+          ou agências da Caixa Econômica Federal (para premios superiores a 1 787,77 reais). Se o período de 90 dias expirar,
+          o dinheiro do prêmio será transferido ao Tesouro Nacional e investido em programas educacionais.
+        </h7>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section" id="probabilidades">
+      <h5>Probabilidades de acerto</h5>
+      <div>
+        <table>
+        <thead>
+          <tr>
+              <th>Quantidade de dezenas</th>
+              <th>preço</th>
+              <th>Probabilidade de acerto(1 a cada)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>6</td>
+            <td>4,50</td>
+            <td>50.063.860</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>31,50</td>
+            <td>7.151.980</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>126,00</td>
+            <td>1.787.995</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>378,00</td>
+            <td>595.998</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>945,00</td>
+            <td>238.399</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>2.079,00</td>
+            <td>108.363</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>4.158,00</td>
+            <td>54.182</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>7.722,00</td>
+            <td>29.175</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>13.513,50</td>
+            <td>16.671</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>22.522,50</td>
+            <td>10.003</td>
+          </tr>
+
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer" class="page-footer green">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h6 class="white-text">Clique da sorte</h6>
+          <p class="grey-text text-lighten-4">Site criado com intuito de gerar um palpite de dezenas para apostar na Mega-Sena ou qualquer tipo de sorteio que necessite das dezenas que dispomos</p>
+
+        </div>
+        <div class="col l3 s12">
+        </div>
+        <div class="col l3 s12">
+          <h6 class="white-text">Apoie projetos como este</h6>
+          <ul>
+            <li><a class="white-text" href="https://www.paypal.com/donate?hosted_button_id=JJMWF3PN3RBD4">
+              <img id="paylpal" src="images/paypal2.png" alt="paylpal">
+            </a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Feito por <a class="orange-text text-lighten-3" href="https://www.linkedin.com/in/allanbotome/">Allan F. Botome </a>
+      </div>
+      <i class="small material-icons"><a href="#logo-container" id="toparrow">publish</a></i>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/gerarDezenas.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems, options);
+    });
+    $(document).ready(function(){
+      $('select').formSelect();
+    });
+  </script>
+
+  </body>
+</html>

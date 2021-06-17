@@ -1,0 +1,61 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+#logonav{
+  width: 60px;
+  height: 45px;
+  padding-top: 8px;
+  text-align: center;
+}
+
+#logo-container{
+  color: orange;
+}
+
+p, li{
+  color: orange;
+}
+
+body{
+  font-family: 'Oswald', cursive;
+}
+
+#num{
+  color: green;
+}
+
+#gerador{
+  background-color: #F2F2F2;
+  position: relative;
+}
+
+#geradordiv{
+  padding-top: 5%;
+}
+
+#megasena, #probabilidades{
+  position: relative;
+  padding-top: 5%;  
+}
+
+#logomega{
+  width: 30%;
+  height: 5%;
+  padding-bottom: 3%;
+}
+
+#toparrow{
+  color: white;
+}
