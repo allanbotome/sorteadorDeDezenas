@@ -1,11 +1,6 @@
 function gerarDezenas() {
   var op = parseInt(document.getElementById('option').value);
 
-  if (isNaN(op) || op < 6 || op > 15) {
-    alert('Selecione uma quantidade válida de dezenas (entre 6 e 15).');
-    return;
-  }
-
   var nums = [];
 
   while (nums.length < op) {
